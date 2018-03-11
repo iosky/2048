@@ -1,0 +1,161 @@
+body, html {
+  height: 100%;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+body {
+  color: #776e65;
+  background: #faf8ef;
+}
+
+h2, p, body {
+  margin: 0;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+#container {
+  position: relative;
+  width: 450px;
+  margin: 0 auto;
+  padding-top: 20px;
+  #header {
+    display: flex;
+    margin-bottom: 15px;
+    height: 55px;
+    #name {
+      width: 180px;
+      height: 55px;
+      margin-right: 60px;
+      color: #776e65;
+      font-weight: bold;
+      line-height: 55px;
+      font-size: 65px;
+    }
+    #score {
+      display: flex;
+      flex-wrap: wrap;
+      width: 130px;
+      height: 55px;
+      font-size: 12px;
+      background: #bbada0;
+      color: #fff;
+      border-radius: 3px;
+      margin-right: 5px;
+    }
+    #best {
+      display: flex;
+      flex-wrap: wrap;
+      width: 150px;
+      height: 55px;
+      font-size: 12px;
+      background: #bbada0;
+      color: #fff;
+      border-radius: 3px;
+    }
+    .title {
+      width: 100%;
+      height: 26px;
+      line-height: 26px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #eee4da;
+      font-weight: bold;
+    }
+    .num {
+      width: 100%;
+      text-align: center;
+      line-height: 1;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+  #game-intro {
+    display: flex;
+    #intro-content {
+      width: 450px - 120px;
+      #subtitle {
+        font-size: 17px;
+      }
+      #sub-intro {
+        line-height: 1.8;
+      }
+    }
+    button {
+      width: 120px;
+      height: 40px;
+      border-radius: 2px;
+      color: #fff;
+      background-color: #8f7a66;
+    }
+  }
+  #game-wrapper {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 4px;
+    background: #bbada0;
+    .grid-container {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-row-gap: 10px;
+      .grid-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 10px;
+        .grid-cell {
+          background: #cdc1b4;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+  .tile-container {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    .tile {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 99px;
+      height: 99px;
+      font-size: 53px;
+      font-weight: bold;
+      transition: all .4s ease;
+      .tile-inner {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 99px;
+        border-radius: 3px;
+        animation: create .3s;
+      }
+    }
+  }
+}
+
+@keyframes create {
+  from {
+    transform: scale3d(0.5, 0.5, 0.5);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
